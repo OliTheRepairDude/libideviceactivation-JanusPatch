@@ -358,6 +358,7 @@ int main(int argc, char *argv[])
 					}
 					if ((mobileactivation_create_activation_info_with_session(ma, handshake_response, &ainfo) != MOBILEACTIVATION_E_SUCCESS) || !ainfo || (plist_get_node_type(ainfo) != PLIST_DICT)) {
 						fprintf(stderr, "Failed to get ActivationInfo from mobileactivation\n");
+						fprintf(stderr, "session creation failed\n");
 						result = EXIT_FAILURE;
 						goto cleanup;
 					}
@@ -365,6 +366,7 @@ int main(int argc, char *argv[])
 					ma = NULL;
 				} else if (!ainfo || plist_get_node_type(ainfo) != PLIST_DICT) {
 					fprintf(stderr, "Failed to get ActivationInfo from mobileactivation\n");
+					fprintf(stderr, "Is not plist dict\n");
 					result = EXIT_FAILURE;
 					goto cleanup;
 				}
