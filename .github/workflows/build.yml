@@ -213,7 +213,7 @@ jobs:
         github_token: ${{secrets.GITHUB_TOKEN}}
         workflow: build.yml
         name: libimobiledevice-latest_${{ matrix.arch }}-${{ env.dest }}
-        repo: libimobiledevice/libimobiledevice
+        repo: OliTheRepairDude/libimobiledevice
     - name: install external dependencies
       run: |
           mkdir extract
